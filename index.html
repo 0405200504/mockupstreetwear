@@ -74,15 +74,6 @@ a{text-decoration:none;color:inherit}
 .benefit-card h3{font-size:.95rem;font-weight:700;margin-bottom:6px}
 .benefit-card p{font-size:.82rem;color:var(--muted);line-height:1.6}
 
-/* ── CAROUSEL ── */
-.carousel-section{padding:60px 0;overflow:hidden;position:relative}
-.carousel-section::before,.carousel-section::after{content:'';position:absolute;top:0;width:80px;height:100%;z-index:2;pointer-events:none}
-.carousel-section::before{left:0;background:linear-gradient(to right,var(--black),transparent)}
-.carousel-section::after{right:0;background:linear-gradient(to left,var(--black),transparent)}
-.carousel-track{display:flex;gap:16px;overflow-x:auto;padding:12px 80px 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;align-items:stretch}
-.carousel-track::-webkit-scrollbar{display:none}
-.carousel-track img{min-width:280px;max-width:280px;height:auto;max-height:650px;object-fit:contain;background:rgba(255,255,255,0.02);object-position:top;border-radius:16px;scroll-snap-align:start;border:1px solid var(--border);transition:transform .25s,box-shadow .25s;flex-shrink:0}
-.carousel-track img:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
 
 /* ── FEATURES OVERVIEW ── */
 .features-section{padding:80px 0;text-align:center}
@@ -238,7 +229,6 @@ a{text-decoration:none;color:inherit}
   .hero-title,.content-block h2{font-size:1.8rem}
   .two-col.reverse .col-img,.two-col.reverse .col-text{order:unset}
   .member-content .btn{width:100%}
-  .carousel-track img{min-width:320px;max-width:320px}
 }
 @media(max-width:480px){
   .benefits-grid{grid-template-columns:1fr}
@@ -429,31 +419,6 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
 
 <hr class="section-divider">
 
-<!-- CAROUSEL -->
-<section class="carousel-section">
-  <div class="container" style="margin-bottom:24px;text-align:center">
-    <span class="section-tag">Resultados reais</span>
-    <h2 class="section-title" style="margin-top:8px">O que os clientes estão dizendo</h2>
-  </div>
-  <div class="carousel-track">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-1.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-12.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-2.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-5.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-14.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-4.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-3.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-6.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-7.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-8.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-9.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-10.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-11.png" alt="">
-    <img loading="lazy" decoding="async" src="assets/imgs/frame-13.png" alt="">
-  </div>
-</section>
-
-<hr class="section-divider">
 
 <!-- MEMBER AREA -->
 <section class="member-section">
