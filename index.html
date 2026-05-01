@@ -74,14 +74,7 @@ a{text-decoration:none;color:inherit}
   border-bottom: 1px solid var(--border);
 }
 
-/* ── COUNTDOWN ── */
-.countdown-bar{background:var(--black);padding:14px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,.05)}
-.countdown-wrapper{display:flex;justify-content:center;align-items:center;gap:4px;margin-bottom:6px}
-.cd-block{display:flex;flex-direction:column;align-items:center;min-width:52px}
-.cd-num{font-family:'JetBrains Mono',monospace;font-size:1.25rem;font-weight:700;color:var(--green);line-height:1}
-.cd-label{font-size:.52rem;color:rgba(161,161,170,.5);text-transform:uppercase;letter-spacing:2px;margin-top:2px}
-.cd-sep{font-family:'JetBrains Mono',monospace;font-size:1.1rem;color:rgba(188,247,32,.4);align-self:center;padding-bottom:8px}
-.countdown-urgency{color:var(--muted);font-size:.72rem;font-weight:400;letter-spacing:.3px}
+
 
 /* ── HERO ── */
 .hero{padding:20px 0 60px}
@@ -325,19 +318,6 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
   </div>
 </header>
 
-<!-- COUNTDOWN -->
-<div class="countdown-bar">
-  <div class="container">
-    <div class="countdown-wrapper">
-      <div class="cd-block"><span class="cd-num" id="cd-h">08</span><span class="cd-label">Horas</span></div>
-      <span class="cd-sep">:</span>
-      <div class="cd-block"><span class="cd-num" id="cd-m">44</span><span class="cd-label">Minutos</span></div>
-      <span class="cd-sep">:</span>
-      <div class="cd-block"><span class="cd-num" id="cd-s">41</span><span class="cd-label">Segundos</span></div>
-    </div>
-    <p class="countdown-urgency">Aproveite o valor promocional desse Pack antes que esgote!</p>
-  </div>
-</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -432,14 +412,14 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px">
       <div style="display:flex;flex-direction:column;gap:14px">
         <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(239,68,68,.35)">
-          <img loading="lazy" decoding="async" src="imagens/3.png" alt="Mockup qualquer" style="width:100%;display:block;border-radius:16px">
+          <img loading="lazy" decoding="async" src="comparativo/2.png" alt="Mockup qualquer" style="width:100%;display:block;border-radius:16px">
           <div style="position:absolute;top:12px;left:12px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);color:#ef4444;font-size:.65rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;backdrop-filter:blur(8px)">Sem pack</div>
         </div>
         <p style="text-align:center;font-size:.8rem;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1px">Mockup Qualquer</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:14px">
         <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(188,247,32,.35)">
-          <img loading="lazy" decoding="async" src="imagens/4.png" alt="Mockups Streetwear" style="width:100%;display:block;border-radius:16px">
+          <img loading="lazy" decoding="async" src="comparativo/3.png" alt="Mockups Streetwear" style="width:100%;display:block;border-radius:16px">
           <div style="position:absolute;top:12px;left:12px;background:rgba(188,247,32,.15);border:1px solid rgba(188,247,32,.4);color:#BCF720;font-size:.65rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;backdrop-filter:blur(8px)">Com o pack</div>
         </div>
         <p style="text-align:center;font-size:.8rem;font-weight:700;color:#BCF720;text-transform:uppercase;letter-spacing:1px">Mockups Streetwear</p>
@@ -522,10 +502,14 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
     <img loading="lazy" decoding="async" src="depoimentos/3.jpg" alt="Depoimento 3">
     <img loading="lazy" decoding="async" src="depoimentos/4.jpg" alt="Depoimento 4">
     <img loading="lazy" decoding="async" src="depoimentos/5.jpg" alt="Depoimento 5">
+    <img loading="lazy" decoding="async" src="depoimentos2/6.png" alt="Depoimento 6">
+    <img loading="lazy" decoding="async" src="depoimentos2/7.png" alt="Depoimento 7">
     <img loading="lazy" decoding="async" src="depoimentos/2.jpg" alt="Depoimento 2">
     <img loading="lazy" decoding="async" src="depoimentos/3.jpg" alt="Depoimento 3">
     <img loading="lazy" decoding="async" src="depoimentos/4.jpg" alt="Depoimento 4">
     <img loading="lazy" decoding="async" src="depoimentos/5.jpg" alt="Depoimento 5">
+    <img loading="lazy" decoding="async" src="depoimentos2/6.png" alt="Depoimento 6">
+    <img loading="lazy" decoding="async" src="depoimentos2/7.png" alt="Depoimento 7">
   </div>
 </section>
 
@@ -690,21 +674,6 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
 </a>
 
 <script>
-// COUNTDOWN
-(function(){
-  var total = (9 * 3600 + 23 * 60 + 47) * 1000;
-  var end = Date.now() + total;
-  function pad(n){return String(n).padStart(2,'0')}
-  function tick(){
-    var d = Math.max(0, Math.floor((end - Date.now()) / 1000));
-    document.getElementById('cd-h').textContent = pad(Math.floor(d / 3600));
-    document.getElementById('cd-m').textContent = pad(Math.floor((d % 3600) / 60));
-    document.getElementById('cd-s').textContent = pad(d % 60);
-    if(d > 0) setTimeout(tick, 1000);
-  }
-  tick();
-})();
-
 // FAQ
 document.querySelectorAll('.faq-btn').forEach(function(btn){
   btn.addEventListener('click',function(){
