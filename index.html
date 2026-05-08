@@ -138,32 +138,71 @@ a{text-decoration:none;color:inherit}
 .feat-list li{display:flex;align-items:center;gap:10px;font-size:.88rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
 .feat-list li::before{content:"";display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0}
 
+/* ── HIGHLIGHT SECTION ── */
+.highlight-section{padding:100px 0;background:linear-gradient(180deg, rgba(188,247,32,0.02) 0%, transparent 100%)}
+.highlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+
 /* ── BONUS ── */
 .bonus-section{padding:80px 0;text-align:center}
 .bonus-label{font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;margin-bottom:48px}
-.bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+.bonus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:40px 0}
 .bonus-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:16px}
 .bonus-card img{max-width:160px;border-radius:8px}
 .bonus-card p{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);text-align:center;line-height:1.6}
 
-/* ── PRICE TABLE ── */
-.price-section{padding:100px 0;background:linear-gradient(180deg, var(--black), #0f1400, var(--black))}
-.price-card{max-width:480px;margin:0 auto;border-radius:24px;overflow:hidden;border:1px solid rgba(188,247,32,0.15);background:var(--card);box-shadow:0 30px 60px rgba(0,0,0,0.5), 0 0 20px rgba(188,247,32,0.05);position:relative;transition:transform 0.3s ease}
-.price-card:hover{transform:translateY(-10px);border-color:rgba(188,247,32,0.4);box-shadow:0 40px 80px rgba(0,0,0,0.6), 0 0 40px rgba(188,247,32,0.1)}
-.price-card-head{background:rgba(255,255,255,0.03);padding:40px 32px 32px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05);position:relative}
-.offer-badge{position:absolute;top:16px;right:16px;background:var(--green);color:#000;font-size:0.6rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;padding:4px 12px;border-radius:4px;box-shadow:0 0 15px var(--green-glow)}
-.price-card-head p{font-size:0.85rem;color:var(--muted);margin-top:8px;line-height:1.5;max-width:280px;margin-left:auto;margin-right:auto}
-.price-card-body{padding:40px 40px;text-align:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
-.pc-old{font-size:1.1rem;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-bottom:8px;font-weight:500}
-.pc-price{font-size:4.5rem;font-weight:900;color:var(--text);line-height:1;margin-bottom:8px;letter-spacing:-2px}
-.pc-price sup{font-size:1.6rem;font-weight:800;vertical-align:super;margin-right:4px;color:rgba(255,255,255,0.6)}
-.pc-once{font-size:0.7rem;color:var(--green);text-transform:uppercase;letter-spacing:3px;margin-bottom:40px;font-weight:700}
-.pc-features{list-style:none;text-align:left;margin-bottom:40px;display:flex;flex-direction:column;gap:16px}
-.pc-features li{display:flex;align-items:center;gap:14px;font-size:0.9rem;color:var(--muted);font-weight:500;padding:4px 0}
-.pc-features li svg{width:20px;height:20px;stroke:var(--green);fill:none;flex-shrink:0;filter:drop-shadow(0 0 5px var(--green-glow))}
-.btn-price{display:block;background:var(--green);color:#000;text-align:center;padding:20px;border-radius:12px;font-size:1.1rem;font-weight:900;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:20px;box-shadow:0 15px 30px var(--green-glow);transition:all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)}
-.btn-price:hover{transform:scale(1.03);filter:brightness(1.1);box-shadow:0 20px 40px var(--green-glow)}
-.pc-note{font-size:0.75rem;color:rgba(255,255,255,0.25);line-height:1.5;font-style:italic}
+/* ── PRICING GRID ── */
+.pricing-section { padding: 100px 0; }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+  gap: 32px;
+  max-width: 960px;
+  margin: 48px auto 0;
+}
+.price-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.price-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(188,247,32,0.3);
+}
+.price-card.featured {
+  border-color: var(--green);
+  background: linear-gradient(180deg, rgba(188,247,32,0.03), transparent);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(188,247,32,0.1);
+}
+.featured-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green);
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 900;
+  padding: 6px 16px;
+  border-radius: 100px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(188,247,32,0.3);
+}
+.price-header { text-align: center; margin-bottom: 40px; }
+.price-title { font-size: 0.8rem; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+.price-value { font-size: 3.5rem; font-weight: 900; color: var(--text); line-height: 1; }
+.price-subtitle { font-size: 0.9rem; color: var(--muted); margin-top: 8px; }
+.price-features { list-style: none; margin-bottom: 40px; flex-grow: 1; }
+.price-features li { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; font-size: 0.95rem; color: var(--muted); line-height: 1.4; }
+.price-features li svg { width: 20px; height: 20px; stroke: var(--green); fill: none; margin-top: 2px; flex-shrink: 0; }
+.price-features li.negative { color: #555; }
+.price-features li.negative svg { stroke: #555; }
+.price-card .btn { width: 100%; margin-top: auto; }
 /* ── COMPARE SECTION ── */
 .compare-section{padding:80px 0}
 /* ── BEFORE/AFTER SLIDER ── */
@@ -255,6 +294,83 @@ a{text-decoration:none;color:inherit}
 .wa-float:hover{transform:scale(1.1);box-shadow:0 0 48px var(--green-glow)}
 .wa-float svg{width:28px;height:28px;fill:#000}
 
+/* ── POPUP MODAL ── */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(12px);
+}
+.modal-content {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 48px 40px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  animation: modalIn 0.3s ease-out;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.modal-content h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: var(--green);
+}
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.modal-close:hover { color: var(--text); }
+.modal-body {
+  margin-bottom: 32px;
+}
+.modal-body p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.modal-body p strong {
+  color: var(--text);
+}
+.modal-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.btn-nobg {
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.btn-nobg:hover {
+  color: var(--text);
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
   .hero-inner,.member-inner,.two-col,.faq-inner,.footer-inner{grid-template-columns:1fr}
@@ -266,6 +382,19 @@ a{text-decoration:none;color:inherit}
   .two-col.reverse .col-img,.two-col.reverse .col-text{order:unset}
   .member-content .btn{width:100%}
   .carousel-track img{min-width:320px;max-width:320px}
+  .benefits-grid,.bonus-grid,.highlight-grid{grid-template-columns:1fr}
+  .highlight-section{padding:60px 0}
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+@media(max-width:480px){
+  .benefits-grid,.bonus-grid,.highlight-grid{grid-template-columns:1fr}
+  .highlight-section{padding:40px 0}
+  .hero-title{font-size:1.5rem}
+  .pricing-grid { padding: 0 20px; }
+  .price-card { padding: 32px 24px; }
 }
 @media(max-width:480px){
   .benefits-grid{grid-template-columns:1fr}
@@ -294,27 +423,8 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
 
 <header class="ticker-wrap">
   <div class="ticker">
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <!-- Duplicate for infinite loop -->
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
-    <span class="ticker__item">MOCKUPS STREETWEAR</span>
+    <span class="ticker__item">VISUAL DE MARCA GRANDE · SEM AGÊNCIA · SEM DESIGNER · +240 MARCAS USANDO · MOCKUP PROFISSIONAL · FEITO PRA STREETWEAR BRASILEIRO · VISUAL DE MARCA GRANDE ·</span>
+    <span class="ticker__item">VISUAL DE MARCA GRANDE · SEM AGÊNCIA · SEM DESIGNER · +240 MARCAS USANDO · MOCKUP PROFISSIONAL · FEITO PRA STREETWEAR BRASILEIRO · VISUAL DE MARCA GRANDE ·</span>
   </div>
 </header>
 
@@ -331,23 +441,18 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
         </script>
       </div>
       <div class="hero-content">
-        <span class="section-tag">TUDO QUE VOCÊ PRECISA PRA DEIXAR SUA MARCA PROFISSIONAL</span>
-        <h1 class="hero-title">+500 MOCKUPS<br><span class="text-green">STREETWEAR</span></h1>
-        <p class="hero-desc">3 anos garimpando, testando e criando mockups pra quem leva marca a sério. Se você ainda usa foto genérica do Google, isso aqui vai mudar o jogo.</p>
-        <div class="price-row">
-          <span class="price-new">R$27,00</span>
-          <span class="price-old">R$200,00</span>
-        </div>
-        <a href="https://pay.cakto.com.br/puxbwfw_824708" target="_blank" class="btn btn-primary btn-full">Comprar agora</a>
+        <h1 class="hero-title">Sua marca é boa.<br><span class="text-green">Agora faz ela parecer.</span></h1>
+        <p class="hero-desc">+500 mockups streetwear feitos pra quem leva marca a sério.<br>Sem fotógrafo, sem estúdio, sem agência. Só você e um pack que muda como o cliente enxerga a sua peça.</p>
+        <a href="#plano-completo" class="btn btn-primary btn-full">Quero o Pack de Mockups Streetwear</a>
         <div class="trust-row">
           <span class="trust-item">
-            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Compra Segura
+            <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>✓ Acesso imediato após o pagamento
           </span>
           <span class="trust-item">
-            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Imediato
+            <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>✓ Funciona no Canva, PicsArt e Photoshop
           </span>
           <span class="trust-item">
-            <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>7 Dias de Garantia
+            <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>✓ 7 dias de garantia — não gostou, devolve tudo
           </span>
         </div>
       </div>
@@ -361,39 +466,39 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
 <section class="benefits-section">
   <div class="container">
     <div style="text-align:center">
-      <span class="section-tag">O que você recebe</span>
-      <h2 class="section-title" style="margin-top:8px">Ao baixar o pack, você terá acesso a:</h2>
+      <span class="section-tag">O que vem dentro do pack</span>
+      <h2 class="section-title" style="margin-top:8px">O que você recebe</h2>
     </div>
     <div class="benefits-grid">
       <div class="benefit-card">
         <div class="benefit-icon"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-        <h3>+500 Mockups PNG</h3>
-        <p>Frente, costas, separados por tipo e cor. Full HD. É só abrir e usar.</p>
+        <h3>+500 Mockups PNG em Full HD</h3>
+        <p>Frente, costas, por tipo e cor. É só abrir e encaixar sua arte. Em 5 minutos sua peça parece de loja grande.</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
-        <h3>Modelos Reais (On-Model)</h3>
-        <p>Peças com aspectos e texturas reais.</p>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Modelos reais com caimento de verdade</h3>
+        <p>Nada de boneco de plástico. Textura, caimento, aspecto de editorial. O tipo de foto que faz cliente confiar antes de comprar.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <h3>+30 Mockups Photoshop</h3>
-        <p>PSD organizado pra você trocar cor, ajustar sombra e exportar em minutos</p>
+        <h3>+30 Mockups PSD para Photoshop</h3>
+        <p>Para quem quer ir além do Canva. Troca cor, ajusta sombra e exporta em minutos. Organizado por camadas, sem precisar ser designer.</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
-        <h3>Texturas Ultra-Realistas</h3>
-        <p>Algodão, moletom, malha em resolução alta. Dá pra sentir o tecido só de olhar.</p>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Texturas ultra-realistas em 4K</h3>
+        <p>Algodão, moletom, malha em resolução que dá pra sentir o tecido só de olhar. Visual de marca que cobra mais porque entrega mais.</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/></svg></div>
-        <h3>Variedade Completa</h3>
-        <p>Oversized, boxy, bonés, moletons, acessório. Tudo que uma marca streetwear de verdade precisa mostrar.</p>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <h3>Toda a variedade do streetwear</h3>
+        <p>Oversized, boxy, bonés, moletons, acessórios. Tudo que uma marca streetwear precisa mostrar sem depender de sessão de fotos.</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
-        <h3>Fácil de Usar</h3>
-        <p>Canva, Photoshop, PicsArt, pelo celular mesmo. Sem precisar de agência ou designer.</p>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3>Funciona pelo celular, agora</h3>
+        <p>Canva, PicsArt, CapCut. Sem computador, sem agência. Você faz hoje e publica hoje.</p>
       </div>
     </div>
   </div>
@@ -406,23 +511,23 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
   <div class="container">
     <div style="text-align:center">
       <span class="section-tag">Comparativo</span>
-      <h2 class="section-title" style="margin-top:12px">Imagine o seu mockup assim…</h2>
-      <p style="color:var(--muted);font-size:.9rem;margin-top:8px;max-width:560px;margin-left:auto;margin-right:auto">A diferença entre um mockup genérico e um mockup profissional pode ser a diferença entre uma venda perdida e um cliente fiel.</p>
+      <h2 class="section-title" style="margin-top:12px">Isso é o que o cliente vê</h2>
+      <p style="color:var(--muted);font-size:.9rem;margin-top:8px;max-width:560px;margin-left:auto;margin-right:auto">Não é sobre ter o produto melhor. É sobre mostrar de um jeito que faz o cliente confiar.</p>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px">
       <div style="display:flex;flex-direction:column;gap:14px">
         <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(239,68,68,.35)">
           <img loading="lazy" decoding="async" src="comparativo/2.png" alt="Mockup qualquer" style="width:100%;display:block;border-radius:16px">
-          <div style="position:absolute;top:12px;left:12px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);color:#ef4444;font-size:.65rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;backdrop-filter:blur(8px)">Sem pack</div>
+          <div style="position:absolute;top:12px;left:12px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);color:#ef4444;font-size:.65rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;backdrop-filter:blur(8px)">Sem o pack</div>
         </div>
-        <p style="text-align:center;font-size:.8rem;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1px">Mockup Qualquer</p>
+        <p style="text-align:center;font-size:.8rem;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1px">Feed genérico. Cliente hesita. Não compra.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:14px">
         <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(188,247,32,.35)">
           <img loading="lazy" decoding="async" src="comparativo/3.png" alt="Mockups Streetwear" style="width:100%;display:block;border-radius:16px">
           <div style="position:absolute;top:12px;left:12px;background:rgba(188,247,32,.15);border:1px solid rgba(188,247,32,.4);color:#BCF720;font-size:.65rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;backdrop-filter:blur(8px)">Com o pack</div>
         </div>
-        <p style="text-align:center;font-size:.8rem;font-weight:700;color:#BCF720;text-transform:uppercase;letter-spacing:1px">Mockups Streetwear</p>
+        <p style="text-align:center;font-size:.8rem;font-weight:700;color:#BCF720;text-transform:uppercase;letter-spacing:1px">Visual de marca séria. Cliente confia. Compra.</p>
       </div>
     </div>
   </div>
@@ -435,17 +540,18 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
   <div class="container">
     <div class="member-inner">
       <div class="member-content">
-        <span class="section-tag">Área de Membros</span>
-        <h2 class="section-title">Veja o que você vai ter acesso</h2>
+        <span class="section-tag">ÁREA DE MEMBROS</span>
+        <h2 class="section-title">Acesso imediato. Pra sempre.</h2>
+        <p><strong>Pagou uma vez. É seu sem prazo, sem mensalidade.</strong></p>
         <div class="member-video">
             <video preload="metadata" poster="imagens/captura_de_tela.png" controls muted loop playsinline style="width:100%;display:block">
           <source src="imagens/video.mp4" type="video/mp4">
         </video>
         </div>
-        <p><strong>Simples, rápido e ilimitado!</strong></p>
-        <p>Acesse todos os arquivos do <strong>+500 Mockups Streetwear</strong> em nossa área de membros organizada e fácil de usar.</p>
-        <p>Baixe quando quiser e use sem limites.<br>Quando houver atualização, os arquivos entram direto na área de membros.</p>
-        <a href="https://pay.cakto.com.br/puxbwfw_824708" target="_blank" class="btn btn-primary">Comprar agora</a>
+        <div class="member-content">
+          <p>Assim que o pagamento confirmar, você acessa a área de membros organizada por tipo de peça e cor. Baixa quando quiser, quantas vezes quiser. E toda vez que novos mockups entrarem no pack, aparecem direto na sua área — sem pagar nada a mais.</p>
+          <a href="#plano-completo" class="btn btn-primary">Quero o Pack de Mockups Streetwear</a>
+        </div>
       </div>
     </div>
   </div>
@@ -460,29 +566,31 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
   <div class="container">
     <div style="text-align:center">
       <span class="section-tag">Transformação</span>
-      <h2 class="section-title" style="margin-top:12px">O antes e o depois da sua marca</h2>
+      <h2 class="section-title" style="margin-top:12px">O que muda de verdade</h2>
       <p style="color:var(--muted);font-size:.9rem;margin-top:8px">Isso é o que separa marcas amadoras de marcas que vendem todo dia.</p>
     </div>
     <div class="transform-grid">
       <div class="tf-card before">
         <h3>Sem o Pack</h3>
         <ul class="tf-list">
-          <li><span class="dot tf-dot-red"></span>Buscando mockup no Google de graça e sem padronização</li>
-          <li><span class="dot tf-dot-red"></span>Feed sem identidade visual consistente</li>
-          <li><span class="dot tf-dot-red"></span>Preço baixo porque o produto não transmite valor</li>
-          <li><span class="dot tf-dot-red"></span>Horas perdidas editando foto em baixa qualidade</li>
-          <li><span class="dot tf-dot-red"></span>Clientes hesitam em comprar sem ver a peça bem apresentada</li>
+          <li><span class="dot tf-dot-red"></span>Garimpa mockup no Google, sem padrão, sem identidade</li>
+          <li><span class="dot tf-dot-red"></span>Feed que parece amador — mesmo a peça sendo boa</li>
+          <li><span class="dot tf-dot-red"></span>Cliente pergunta "mas como fica na roupa?" porque não visualiza</li>
+          <li><span class="dot tf-dot-red"></span>Cobra menos porque o visual não justifica preço maior</li>
+          <li><span class="dot tf-dot-red"></span>Horas perdidas tentando editar foto ruim</li>
+          <li><span class="dot tf-dot-red"></span>Cada lançamento começa do zero</li>
         </ul>
       </div>
       <div class="tf-arrow">→</div>
       <div class="tf-card after">
         <h3>Com o Pack</h3>
         <ul class="tf-list">
-          <li><span class="dot tf-dot-green"></span>+500 mockups prontos para usar em segundos</li>
-          <li><span class="dot tf-dot-green"></span>Feed com identidade premium e estilo streetwear</li>
-          <li><span class="dot tf-dot-green"></span>Ticket médio mais alto por visual profissional</li>
-          <li><span class="dot tf-dot-green"></span>Produção de conteúdo muito mais rápida e fácil</li>
-          <li><span class="dot tf-dot-green"></span>Mais confiança do cliente e mais conversão na loja</li>
+          <li><span class="dot tf-dot-green"></span>+500 mockups prontos, é só encaixar a sua arte</li>
+          <li><span class="dot tf-dot-green"></span>Feed com identidade que comunica marca séria</li>
+          <li><span class="dot tf-dot-green"></span>Cliente visualiza, confia e compra</li>
+          <li><span class="dot tf-dot-green"></span>Visual profissional que sustenta ticket mais alto</li>
+          <li><span class="dot tf-dot-green"></span>Post pronto em minutos, não em horas</li>
+          <li><span class="dot tf-dot-green"></span>Identidade consistente em cada lançamento</li>
         </ul>
       </div>
     </div>
@@ -514,52 +622,124 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
 </section>
 
 <!-- BONUS -->
+</section>
+
+<hr class="section-divider">
+
+<!-- BONUS -->
 <section class="bonus-section">
   <div class="container">
     <span class="section-tag">Exclusivo para hoje</span>
     <h2 class="bonus-label" style="margin-top:12px">Comprando hoje você ganha:</h2>
     <div class="bonus-grid">
       <div class="bonus-card">
-        <img loading="lazy" decoding="async" src="assets/imgs/somente-11.png" alt="Guia de Uso">
-        <p>Guia Exclusivo de Aplicação<br>para resultados profissionais</p>
-      </div>
-      <div class="bonus-card" style="border-color:var(--green)">
-        <img loading="lazy" decoding="async" src="assets/imgs/bonus.png" alt="Bônus">
-        <p style="color:var(--green);font-size:1rem">BÔNUS EXCLUSIVO</p>
+        <img loading="lazy" decoding="async" src="bonus/8.png" alt="Guia de Criação">
+        <p>Guia de Criação de Marca<br>Do Zero ao Primeiro Drop</p>
       </div>
       <div class="bonus-card">
-        <img loading="lazy" decoding="async" src="assets/imgs/somente-12.png" alt="Acesso Vitalício">
-        <p>Acesso Vitalício + Atualizações<br>sem pagar mais nenhum centavo!</p>
+        <img loading="lazy" decoding="async" src="bonus/6.png" alt="Planilha de Precificação">
+        <p>Planilha de Precificação<br>Para Lucrar de Verdade</p>
+      </div>
+      <div class="bonus-card">
+        <img loading="lazy" decoding="async" src="bonus/7.png" alt="Lista de Fornecedores">
+        <p>Lista de Fornecedores<br>Os Melhores do Brasil</p>
+      </div>
+      <div class="bonus-card">
+        <img loading="lazy" decoding="async" src="bonus/4.png" alt="Guia de Faturamento">
+        <p>Guia de Faturamento<br>Como chegar nos R$30k</p>
       </div>
     </div>
-    <a href="https://pay.cakto.com.br/puxbwfw_824708" target="_blank" class="btn btn-primary" style="max-width:320px;margin:0 auto;display:block">Garantir agora!</a>
+    <a href="#plano-completo" class="btn btn-primary" style="max-width:320px;margin:0 auto;display:block">Quero o Pack de Mockups Streetwear</a>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- VITALICIO + FORNECEDORES HIGHLIGHT -->
+<section class="highlight-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px">
+      <span class="section-tag">O Jogo de Quem Escala</span>
+      <h2 class="section-title" style="margin-top:16px">O segredo das marcas que não param de crescer</h2>
+      <p style="color:var(--muted);max-width:600px;margin:16px auto 0;line-height:1.6">Ter um visual foda é o primeiro passo. Mas pra construir um império, você precisa de mais do que apenas imagens bonitas. Você precisa de estrutura.</p>
+    </div>
+
+    <div class="highlight-grid">
+      <div class="highlight-card" style="background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;right:0;padding:12px 24px;background:var(--green);color:#000;font-weight:900;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;border-bottom-left-radius:24px">EXCLUSIVO PLANO COMPLETO</div>
+        <div style="margin-bottom:24px">
+          <svg viewBox="0 0 24 24" style="width:48px;height:48px;stroke:var(--green);fill:none;stroke-width:1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 style="font-size:1.6rem;margin-bottom:16px">Lista de Fornecedores VIP (+40)</h3>
+        <p style="color:var(--muted);line-height:1.6;font-size:0.95rem">Pare de perder tempo e dinheiro com fornecedores que não entendem a cena. Tenha o contato direto de <strong>mais de 40 fornecedores</strong> validados: de fábricas de grande porte e Private Labels a serviços de Print On Demand. Malha de alta gramatura, corte boxy, acabamento premium e preço de fábrica. É o atalho pra ter um produto que o seu cliente sente a qualidade só de tocar.</p>
+      </div>
+
+      <div class="highlight-card" style="background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;right:0;padding:12px 24px;background:var(--green);color:#000;font-weight:900;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;border-bottom-left-radius:24px">PARA SEMPRE SEU</div>
+        <div style="margin-bottom:24px">
+          <svg viewBox="0 0 24 24" style="width:48px;height:48px;stroke:var(--green);fill:none;stroke-width:1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3 style="font-size:1.6rem;margin-bottom:16px">Acesso Vitalício + Updates Semanais</h3>
+        <p style="color:var(--muted);line-height:1.6;font-size:0.95rem">O streetwear muda todo dia — e nós também. Lançamos <strong>novos mockups toda semana</strong> para garantir que sua marca esteja sempre no topo das tendências. Com o acesso vitalício, você paga uma única vez e recebe todas as atualizações futuras direto na sua área de membros. Sem mensalidade, sem taxas escondidas, sem expiração. Seu arsenal atualizado pra sempre.</p>
+      </div>
+    </div>
+    
+    <div style="margin-top:64px;text-align:center">
+      <p style="font-size:1.1rem;font-weight:700;margin-bottom:24px">Pronto para profissionalizar sua marca de ponta a ponta?</p>
+      <a href="#plano-completo" class="btn btn-primary" style="padding:20px 48px">Garantir Meu Acesso Completo</a>
+    </div>
   </div>
 </section>
 
 <!-- PRICE TABLE -->
-<section class="price-section">
+<section class="pricing-section" id="planos">
   <div class="container">
-    <div style="text-align:center;margin-bottom:40px">
-      <span class="section-tag">Oferta especial</span>
-      <h2 class="section-title" style="margin-top:8px">Garanta o seu acesso agora</h2>
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="section-tag">OFERTA ESPECIAL</span>
+      <h2 class="section-title">Escolha o seu plano</h2>
+      <p style="color:var(--muted);margin-top:12px">Acesso imediato e vitalício em qualquer uma das opções.</p>
     </div>
-    <div class="price-card">
-      <div class="price-card-head">
-        <span class="offer-badge">OFERTA</span>
-        <p>Aproveite hoje e leve o pacote completo por apenas</p>
-      </div>
-      <div class="price-card-body">
-        <p class="pc-old">R$200,00</p>
-        <div class="pc-price"><sup>R$</sup>27,00</div>
-        <p class="pc-once">Pague uma única vez</p>
-        <ul class="pc-features">
-          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Acesso Vitalício e Atualizações</li>
-          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bônus: Guia de Aplicação</li>
-          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>7 Dias de Garantia Total</li>
-          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Acesso imediato após o pagamento</li>
+    
+    <div class="pricing-grid">
+      <!-- ESSENCIAL -->
+      <div class="price-card">
+        <div class="price-header">
+          <h3 class="price-title">Plano Essencial</h3>
+          <div class="price-value">R$ 27,00</div>
+          <p class="price-subtitle">O básico pra começar hoje</p>
+        </div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> +500 Mockups PNG</li>
+          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Todas as cores e tipos</li>
+          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Uso no Canva e Celular</li>
+          <li class="negative"><svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Lista de Fornecedores</li>
+          <li class="negative"><svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Acesso Vitalício</li>
+          <li class="negative"><svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Sem Mockups PSD (Photoshop)</li>
+          <li class="negative"><svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Sem Texturas 4K</li>
         </ul>
-        <a href="https://pay.cakto.com.br/puxbwfw_824708" target="_blank" class="btn-price">Clique aqui e garanta agora</a>
-        <p class="pc-note">Sua última oportunidade de agir como marca grande e crescer no mercado!</p>
+        <button onclick="openModal()" class="btn btn-primary" style="width:100%;margin-top:auto;cursor:pointer">Quero o Pack de Mockups Streetwear</button>
+      </div>
+
+      <!-- COMPLETO -->
+      <div class="price-card featured" id="plano-completo">
+        <div class="featured-badge">MAIS VENDIDO</div>
+        <div class="price-header">
+          <h3 class="price-title">Plano Completo</h3>
+          <div class="price-value">R$ 77,00</div>
+          <p class="price-subtitle">O pack definitivo para marcas</p>
+        </div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> +500 Mockups PNG</li>
+          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Todas as cores e tipos</li>
+          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Uso no Canva e Celular</li>
+          <li style="color:var(--text);font-weight:700"><svg viewBox="0 0 24 24" stroke-width="2.5" style="stroke:var(--green)"><polyline points="20 6 9 17 4 12"/></svg> Acesso Vitalício <span style="font-size:0.6rem;background:var(--green);color:#000;padding:2px 6px;border-radius:4px;margin-left:4px">EXCLUSIVO</span></li>
+          <li style="color:var(--text);font-weight:700"><svg viewBox="0 0 24 24" stroke-width="2.5" style="stroke:var(--green)"><polyline points="20 6 9 17 4 12"/></svg> Lista de Fornecedores <span style="font-size:0.6rem;background:var(--green);color:#000;padding:2px 6px;border-radius:4px;margin-left:4px">EXCLUSIVO</span></li>
+          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> +30 Mockups PSD Premium</li>
+          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Texturas de Tecido 4K</li>
+          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Pack de Shapers Streetwear</li>
+          <li><svg viewBox="0 0 24 24" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Suporte Prioritário</li>
+        </ul>
+        <a href="https://pay.cakto.com.br/3dnej4r" target="_blank" class="btn btn-primary" style="width:100%;margin-top:auto">Quero o Pack de Mockups Streetwear</a>
       </div>
     </div>
   </div>
@@ -578,18 +758,7 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
   </div>
 </section>
 
-<hr class="section-divider">
 
-<!-- URGENCY -->
-<section class="urgency-strip">
-  <div class="container">
-    <h2>Somente <span class="text-green">R$27,00</span> — Oferta por tempo limitado</h2>
-    <p>Esse valor promocional pode subir a qualquer momento. Garante agora e transforma a apresentação da sua marca hoje mesmo.</p>
-    <a href="https://pay.cakto.com.br/puxbwfw_824708" target="_blank" class="btn btn-primary">Quero garantir agora</a>
-  </div>
-</section>
-
-<hr class="section-divider">
 
 <!-- FAQ + SUPPORT -->
 <section class="faq-section">
@@ -644,29 +813,48 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-inner">
+  <div class="container" style="text-align:center">
+    <h2 class="section-title">Faz sua marca parecer gigante hoje.</h2>
+    <p style="color:var(--muted);margin:16px 0 32px">O pack que você precisa, com o preço que você pode pagar.</p>
+    <a href="#plano-completo" class="btn btn-primary">Quero o Pack de Mockups Streetwear</a>
+    
+    <div style="margin-top:64px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;text-align:left">
       <div class="footer-logo">
         <span style="display:inline-block;font-family:'Inter',sans-serif;font-size:1rem;font-weight:900;letter-spacing:2px;color:#BCF720;text-transform:uppercase;">[ MOCKUPS STREETWEAR ]</span>
         <p class="footer-copy" style="margin-top:10px">© 2025 Mockups Streetwear. Todos os Direitos Reservados.</p>
       </div>
       <div class="footer-col">
         <h6>Contato</h6>
-        <ul>
+        <ul style="list-style:none;padding:0;color:var(--muted);font-size:.8rem">
           <li>+55 11 98091-1230</li>
           <li>mockupsstreetwear@gmail.com</li>
         </ul>
       </div>
       <div class="footer-col">
         <h6>Políticas</h6>
-        <ul>
-          <li><a href="#">Políticas de Privacidade</a></li>
-          <li><a href="#">Termos de Uso</a></li>
+        <ul style="list-style:none;padding:0;font-size:.8rem">
+          <li><a href="#" style="color:var(--muted)">Políticas de Privacidade</a></li>
+          <li><a href="#" style="color:var(--muted)">Termos de Uso</a></li>
         </ul>
       </div>
     </div>
   </div>
 </footer>
+
+<!-- UPGRADE MODAL -->
+<div id="upgradeModal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <span class="section-tag" style="background:var(--green);color:#000">OFERTA ÚNICA: R$ 67</span>
+    <h2 style="font-size:1.8rem;margin:12px 0;line-height:1.2">ESPERA! Não leve apenas o básico.</h2>
+    <p style="color:var(--muted);margin-bottom:24px;line-height:1.6">Garanta agora o <span class="text-green" style="font-weight:700">Plano Completo</span> com um desconto exclusivo de R$ 10,00. <br><br>Leve a <strong>Lista de Fornecedores (+40)</strong>, o <strong>Acesso Vitalício</strong> com updates semanais e todos os Mockups Premium em PSD por apenas <span style="color:white;font-weight:900;font-size:1.4rem">R$ 67,00</span>.</p>
+    
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <a href="https://pay.cakto.com.br/ehfiq85" class="btn btn-primary" style="width:100%;text-align:center;font-weight:900">SIM! QUERO O UPGRADE POR R$ 67</a>
+      <a href="https://pay.cakto.com.br/puxbwfw_824708" style="color:var(--muted);text-decoration:underline;font-size:.8rem;text-align:center;padding:8px">Não, prefiro continuar com o Plano Essencial</a>
+    </div>
+  </div>
+</div>
 
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/5511980911230" target="_blank" class="wa-float" title="Fale conosco no WhatsApp">
@@ -682,6 +870,22 @@ document.querySelectorAll('.faq-btn').forEach(function(btn){
     document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open')});
     if(!open)item.classList.add('open');
   });
+});
+
+// Modal
+function openModal() {
+  document.getElementById('upgradeModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('upgradeModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Close on overlay click
+document.getElementById('upgradeModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
 });
 </script>
 </body>
