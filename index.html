@@ -2,13 +2,21 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>+500 Mockups Streetwear</title>
+<title>+500 Mockups Streetwear | Visual de Marca Profissional</title>
+<meta name="description" content="+500 mockups streetwear profissionais. Sem fotógrafo, sem estúdio, sem agência. Funciona no Canva, PicsArt e Photoshop. Acesso imediato.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Preconnect para fontes e rastreamento -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://connect.facebook.net">
+<link rel="dns-prefetch" href="https://connect.facebook.net">
+<link rel="dns-prefetch" href="https://www.facebook.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<!-- Preload do banner hero (imagem acima da dobra — prioridade máxima) -->
+<link rel="preload" as="image" href="imagens/banner mockups.png">
+
+<!-- Fontes: apenas os pesos usados, com font-display:swap para não bloquear renderização -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -401,23 +409,6 @@ a{text-decoration:none;color:inherit}
   .hero-title{font-size:1.5rem}
 }
 </style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1137405748507091');
-fbq('track', 'PageView');
-</script>
-<noscript><img loading="lazy" decoding="async" height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -916,6 +907,23 @@ function closeModal() {
 document.getElementById('upgradeModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
+
+<!-- Meta Pixel Code (carregado após o conteúdo visual para não atrasar renderização) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1137405748507091');
+fbq('track', 'PageView');
 </script>
+<noscript><img loading="lazy" decoding="async" height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </body>
 </html>
