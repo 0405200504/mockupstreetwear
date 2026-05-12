@@ -107,7 +107,7 @@ a{text-decoration:none;color:inherit}
 .carousel-section::after{right:0;background:linear-gradient(to left,var(--black),transparent)}
 .carousel-track{display:flex;gap:16px;overflow-x:auto;padding:12px 80px 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;align-items:stretch}
 .carousel-track::-webkit-scrollbar{display:none}
-.carousel-track img{min-width:280px;max-width:280px;height:auto;max-height:650px;object-fit:contain;background:rgba(255,255,255,0.02);object-position:top;border-radius:16px;scroll-snap-align:start;border:1px solid var(--border);transition:transform .25s,box-shadow .25s;flex-shrink:0}
+.carousel-track img{min-width:280px;max-width:280px;height:380px;object-fit:cover;object-position:top;border-radius:16px;scroll-snap-align:start;border:1px solid var(--border);transition:transform .25s,box-shadow .25s;flex-shrink:0;background:var(--card)}
 .carousel-track img:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
 
 
@@ -147,7 +147,7 @@ a{text-decoration:none;color:inherit}
 .bonus-label{font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;margin-bottom:48px}
 .bonus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:40px 0}
 .bonus-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:16px}
-.bonus-card img{max-width:160px;border-radius:8px}
+.bonus-card img{max-width:160px;height:160px;object-fit:cover;border-radius:8px;background:var(--card)}
 .bonus-card p{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);text-align:center;line-height:1.6}
 
 /* ── PRICING GRID ── */
@@ -858,15 +858,26 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
 </a>
 
 <script>
-// ── SMOOTH SCROLL SEGURO ──
-// Calcula a posição no momento do clique, evitando bug de layout shift
-// causado por imagens ainda carregando quando a âncora é calculada
+// ── SMOOTH SCROLL SEGURO (mobile-safe) ──
+// Usa double-requestAnimationFrame para garantir que o cálculo de posição
+// ocorre DEPOIS que o browser finalizou toda a renderização do frame,
+// evitando o bug de Layout Shift em mobile.
 function scrollToSection(id) {
-  var el = document.getElementById(id);
-  if (!el) return;
-  var headerH = document.querySelector('.ticker-wrap') ? document.querySelector('.ticker-wrap').offsetHeight : 0;
-  var top = el.getBoundingClientRect().top + window.pageYOffset - headerH - 16;
-  window.scrollTo({ top: top, behavior: 'smooth' });
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var headerH = document.querySelector('.ticker-wrap') ? document.querySelector('.ticker-wrap').offsetHeight : 0;
+      var rect = el.getBoundingClientRect();
+      var top = rect.top + window.pageYOffset - headerH - 16;
+      if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      } else {
+        // fallback para browsers antigos (Samsung Internet, WebView)
+        window.scrollTo(0, top);
+      }
+    });
+  });
 }
 
 document.addEventListener('click', function(e) {
