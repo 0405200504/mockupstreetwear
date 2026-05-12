@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" style="scroll-behavior: smooth;">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <title>+500 Mockups Streetwear</title>
@@ -858,6 +858,28 @@ src="https://www.facebook.com/tr?id=1137405748507091&ev=PageView&noscript=1"
 </a>
 
 <script>
+// ── SMOOTH SCROLL SEGURO ──
+// Calcula a posição no momento do clique, evitando bug de layout shift
+// causado por imagens ainda carregando quando a âncora é calculada
+function scrollToSection(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var headerH = document.querySelector('.ticker-wrap') ? document.querySelector('.ticker-wrap').offsetHeight : 0;
+  var top = el.getBoundingClientRect().top + window.pageYOffset - headerH - 16;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+}
+
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+  var id = link.getAttribute('href').replace('#', '');
+  if (!id) return;
+  var target = document.getElementById(id);
+  if (!target) return;
+  e.preventDefault();
+  scrollToSection(id);
+});
+
 // FAQ
 document.querySelectorAll('.faq-btn').forEach(function(btn){
   btn.addEventListener('click',function(){
@@ -879,7 +901,7 @@ function closeModal() {
   document.body.style.overflow = 'auto';
 }
 
-// Close on overlay click
+// Fecha modal ao clicar fora
 document.getElementById('upgradeModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
